@@ -17,6 +17,7 @@ Last Updated: 2023.10.09
 - [Introduction](#introduction)
 - [Standard Rules](#standard-rules)
 - [Camelcase](#camelcase)
+- [Namespace](#namespace)
 - [Variable Data Size](#variable-data-size)
 - [Variable Naming](#variable-naming)
   - [Construction](#construction)
@@ -42,7 +43,7 @@ Last Updated: 2023.10.09
 
 # Introduction
 
-This just a style guide for development in Unity Engine.
+This just a style guide for development in Unity Engine that aim for project development. NOT FOR 3RD PARTY EXTENSION.
 
 You don't need to uphold yourself to any standard, as long as you can work comfortable and get to the end product at the end.
 
@@ -73,6 +74,10 @@ If you use this and like it, please share to any fellow developers that may find
 # Camelcase
 CamelCase
 SnakeCase
+
+# Namespace
+Namespace is highly recommended.
+It seperate your code from others.
 
 # Variable Data Size
 It is good to refresh your knowledge, there are limitation in computer hardware regarding calculation and runtime.
