@@ -37,6 +37,7 @@ Last Updated: 2023.10.09
 - [Removed Design](#removed-design)
   - [Common Design Pattern](#common-design-pattern)
 - [DO NOT IN ANY CIRCUMSTANCES](#do-not-in-any-circumstances)
+- [Feedback](#feedback)
 - [References](#references)
 
 # Introduction
@@ -220,6 +221,9 @@ Name variable as following:
 
 # DO NOT IN ANY CIRCUMSTANCES
 - Bad Naming Scheme
+
+# Feedback
+- If there are something that doesn't make sense, reach out to me
 
 # References
 - https://docs.godotengine.org/en/stable/tutorials/3d/introduction_to_3d.html
