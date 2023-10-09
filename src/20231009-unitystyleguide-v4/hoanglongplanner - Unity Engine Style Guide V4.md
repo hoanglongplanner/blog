@@ -31,6 +31,9 @@ The cons of using this style:
 - NOT HUNGARIAN NOTATION BUT YET THE MINIMAL VERSION
 - Your IDE is already good enough to deduce what type, if you hover the text (unless you use notepad)
 
+Inspire by the following style guide:
+- Google C++ Style Guide
+
 Inspire by the following programming language:
 - AngelScript
 - Rust
