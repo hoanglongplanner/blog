@@ -375,19 +375,48 @@ code {
 <li><a href="#table-of-contents">Table of Contents</a></li>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#standard-rules">Standard Rules</a></li>
-<li><a href="#common-design-pattern">Common Design Pattern</a></li>
 <li><a href="#camelcase">Camelcase</a></li>
-<li><a href="#variable-naming">Variable Naming</a></li>
+<li><a href="#variable-data-size">Variable Data Size</a></li>
+<li><a href="#variable-naming">Variable Naming</a>
+<ul>
+<li><a href="#construction">Construction</a></li>
+<li><a href="#private-variable">Private Variable</a></li>
+<li><a href="#public-variable">Public Variable</a></li>
+<li><a href="#array">Array</a></li>
+<li><a href="#list">List</a></li>
+<li><a href="#int">Int</a></li>
+<li><a href="#signed-int">Signed Int</a></li>
+<li><a href="#unsigned-int">Unsigned Int</a></li>
+<li><a href="#float">Float</a></li>
+<li><a href="#double">Double</a></li>
+<li><a href="#string">String</a></li>
+<li><a href="#char">Char</a></li>
+<li><a href="#custom-class">Custom Class</a></li>
+</ul>
+</li>
+<li><a href="#function-method-naming">Function Method Naming</a></li>
 <li><a href="#considerations">Considerations</a></li>
+<li><a href="#removed-design">Removed Design</a>
+<ul>
+<li><a href="#common-design-pattern">Common Design Pattern</a></li>
+</ul>
+</li>
+<li><a href="#do-not-in-any-circumstances">DO NOT IN ANY CIRCUMSTANCES</a></li>
 <li><a href="#references">References</a></li>
 </ul>
 <h1 id="introduction">Introduction</h1>
-<p>This just a style guide, you don't need to uphold yourself to any standard, as long as you can work comfortable and get to the end product at the end.</p>
+<p>This just a style guide for development in Unity Engine.</p>
+<p>You don't need to uphold yourself to any standard, as long as you can work comfortable and get to the end product at the end.</p>
 <p>The cons of using this style:</p>
 <ul>
 <li>Take more time to rewrite (which is not a good thing)</li>
 <li>NOT HUNGARIAN NOTATION BUT YET THE MINIMAL VERSION</li>
 <li>Your IDE is already good enough to deduce what type, if you hover the text (unless you use notepad)</li>
+<li>Explicit Heavy (break your fingers more)</li>
+</ul>
+<p>Inspire by the following style guide:</p>
+<ul>
+<li>Google C++ Style Guide</li>
 </ul>
 <p>Inspire by the following programming language:</p>
 <ul>
@@ -395,43 +424,179 @@ code {
 <li>Rust</li>
 <li>C++</li>
 </ul>
+<p>It has been adopt in my own development, and in some public projects already. However this is still a stylize version.</p>
+<p>If you use this and like it, please share to any fellow developers that may find good use of the knowledge. Please properly cite and credit to the original author.</p>
 <h1 id="standard-rules">Standard Rules</h1>
 <ul>
-<li>Natural as you can be</li>
+<li>How you say it naturally, should be named as that. DO NOT FORCE NAMING.</li>
+<li>Minimize standard as much as you can be.</li>
 <li>Please try to avoid naming things with s character, it really is an OCD issue many times</li>
-</ul>
-<h1 id="common-design-pattern">Common Design Pattern</h1>
-<ul>
-<li>Composition</li>
-<li>Builder</li>
-<li>Singleton</li>
+<li>Avoid many technical debt by being flexible.</li>
 </ul>
 <h1 id="camelcase">Camelcase</h1>
 <p>CamelCase
 SnakeCase</p>
+<h1 id="variable-data-size">Variable Data Size</h1>
+<p>It is good to refresh your knowledge, there are limitation in computer hardware regarding calculation and runtime.</p>
 <h1 id="variable-naming">Variable Naming</h1>
-<p>private variable start with _
-public variable must be name like this below</p>
-<p>Array
-sz_somethingName
-szn_somethingName
-List
-list_something
-listn_something</p>
-<p>signed s32
-unsigned u32</p>
+<h2 id="construction">Construction</h2>
+<p>For variable:</p>
 <ul>
-<li>int</li>
-<li>float</li>
-<li>double</li>
-<li>string</li>
+<li>CollectionType_VariableType_VariableName</li>
+<li>CollectionType_VariableName</li>
+</ul>
+<p>EXAMPLE:</p>
+<ul>
+<li>sz_i32_enemyNumber;</li>
+<li>sz_enemyNumber;</li>
+<li>str_characterName;</li>
+</ul>
+<p>For variable (with pointer):</p>
+<ul>
+<li>CollectionType_VariableType_pVariableName</li>
+</ul>
+<p>EXAMPLE:</p>
+<ul>
+<li>i32_pEnemyNumber;</li>
+<li>m_pSomething;</li>
+</ul>
+<h2 id="private-variable">Private Variable</h2>
+<p>private variable start with _</p>
+<h2 id="public-variable">Public Variable</h2>
+<p>public variable is name freely for easily access</p>
+<p>2 styles:</p>
+<ul>
+<li>public int Number;</li>
+</ul>
+<h2 id="array">Array</h2>
+<p>Normal Array:</p>
+<ul>
+<li>sz_somethingName</li>
+<li>sz_type_somethingName</li>
+</ul>
+<p>Array in Array:</p>
+<ul>
+<li>szn_somethingName</li>
+<li>szn_type_somethingName</li>
+</ul>
+<h2 id="list">List</h2>
+<p>Normal List:</p>
+<ul>
+<li>list_something</li>
+<li>list_type_something</li>
+</ul>
+<p>List in List:</p>
+<ul>
+<li>listn_something</li>
+<li>listn_type_something</li>
+</ul>
+<h2 id="int">Int</h2>
+<ul>
+<li>i8</li>
+<li>i16</li>
+<li>i32 (recommended, common use)</li>
+<li>i64</li>
+<li>i128</li>
+<li>i256</li>
+<li>i512</li>
+</ul>
+<p>EXAMPLE:</p>
+<ul>
+<li>int i32_variableName;</li>
+<li>int i16_variableName;</li>
+<li>int int_variableName;</li>
+</ul>
+<h2 id="signed-int">Signed Int</h2>
+<ul>
+<li>s8</li>
+<li>s16</li>
+<li>s32 (recommended, common use)</li>
+<li>s64</li>
+<li>s128</li>
+<li>s256</li>
+<li>s512</li>
+</ul>
+<p>EXAMPLE:</p>
+<ul>
+<li>signed int s32_variableName;</li>
+</ul>
+<h2 id="unsigned-int">Unsigned Int</h2>
+<ul>
+<li>u8</li>
+<li>u16</li>
+<li>u32 (recommended, common use)</li>
+<li>u64</li>
+<li>u128</li>
+<li>u256</li>
+<li>u512</li>
+</ul>
+<p>EXAMPLE:</p>
+<ul>
+<li>unsigned int u32_variableName;</li>
+</ul>
+<h2 id="float">Float</h2>
+<ul>
+<li>f (recommended, common use)</li>
+<li>f32 (Rust style)</li>
+<li>f64 (Rust style)</li>
+</ul>
+<h2 id="double">Double</h2>
+<ul>
+<li>d (recommended, common use)</li>
+</ul>
+<p>EXAMPLE:</p>
+<ul>
+<li>double d_variableName;</li>
+</ul>
+<h2 id="string">String</h2>
+<ul>
+<li>str</li>
+</ul>
+<p>EXAMPLE:
+string str_variableName;</p>
+<h2 id="char">Char</h2>
+<ul>
 <li>char</li>
+</ul>
+<p>EXAMPLE:</p>
+<ul>
+<li>char char_variableName;</li>
+</ul>
+<h2 id="custom-class">Custom Class</h2>
+<ul>
+<li>m</li>
+</ul>
+<p>EXAMPLE:</p>
+<ul>
+<li>EnemyManager m_enemyManager;</li>
+</ul>
+<h1 id="function-method-naming">Function Method Naming</h1>
+<ul>
+<li>public int SetNumber();</li>
+<li>public int GetNumber();</li>
 </ul>
 <h1 id="considerations">Considerations</h1>
 <p>It is a maddening process to say which is X Y Z in 3D Space</p>
 <p>Please just use Roll Pitch Yaw as standard when talking to others regarding 3D Space</p>
 <p><img src="image/20231009-freyaholmer-3dcordinationchart.png" alt="Alt text">
 <img src="image/20230910-sixdegreesoffreedom.jpg" alt="Alt text"></p>
+<h1 id="removed-design">Removed Design</h1>
+<p>Name variable as following:</p>
+<ul>
+<li>int i_something; (confuse with interface class which has same prefix character i, hungarian style to avoid)</li>
+<li>int int_something; (too redundant)</li>
+<li>float float_something (too redundant)</li>
+</ul>
+<h2 id="common-design-pattern">Common Design Pattern</h2>
+<ul>
+<li>Composition</li>
+<li>Builder</li>
+<li>Singleton</li>
+</ul>
+<h1 id="do-not-in-any-circumstances">DO NOT IN ANY CIRCUMSTANCES</h1>
+<ul>
+<li>Bad Naming Scheme</li>
+</ul>
 <h1 id="references">References</h1>
 <ul>
 <li>https://docs.godotengine.org/en/stable/tutorials/3d/introduction_to_3d.html</li>
