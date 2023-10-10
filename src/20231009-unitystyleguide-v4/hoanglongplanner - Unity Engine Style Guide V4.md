@@ -142,10 +142,11 @@ For variable:
 - CollectionType_VariableType_VariableName
 - CollectionType_VariableName 
 
-EXAMPLE:
-- sz_i32_enemyNumber;
-- sz_enemyNumber;
-- str_characterName;
+```c#
+int[] sz_i32_enemyNumber;
+int[] sz_enemyNumber;
+string str_characterName;
+```
 
 For variable (with pointer):
 - CollectionType_VariableType_pVariableName
@@ -157,7 +158,7 @@ CharacterSpawner* m_pSomething;
 ```
 
 ## Public Variable
-Public means public, meaning it use mainly in external class for reference, rarely use in their own creation class
+Public means public, by design it should mainly use in external class to reference variable & functions, rarely use in their own creation class
 
 ```c#
 private int i32_number;
@@ -167,6 +168,16 @@ public int Number {
   }
   set {
     i32_number = value;
+  }
+}
+
+private EnemySpawner[] sz_m_enemySpawner;
+public EnemySpawner[] EnemySpawners {
+  get {
+    return sz_m_enemySpawner;
+  }
+  set {
+    sz_m_enemySpawner = value;
   }
 }
 ```
@@ -211,9 +222,19 @@ Normal List:
 - list_something
 - list_type_something
 
+```c#
+List<float> list_f_allEntityHealth = new List<float>();
+List<AudioClip> list_m_audioClip = new List<AudioClip>();
+```
+
 List in List in List:
 - listn_something
 - listn_type_something
+
+```c#
+List<GameAsset> listn_m_gameAssetDatabase = new List<GameAsset>();
+List<AudioItem> listn_m_audioDatabase = new List<AudioItem>();
+```
 
 ## Boolean
 - is (recommended)
@@ -222,24 +243,30 @@ List in List in List:
 
 When naming boolean, please keep the meaning positive to make it easier to manage this data variable
 
-EXAMPLE:
-- bool isTouchYet;
-- bool canJump;
-- bool HasWeaponInArray(WeaponItem arg_weaponItem);
+```c#
+bool isTouchYet;
+bool canJump;
+bool IsWeaponInHand(){
+  return result;
+}
+bool HasWeaponInArray(WeaponItem arg_weaponItem){
+  return result;
+}
+```
 
 ## Int
 - i8
-- i16
-- i32 (recommended, common use)
-- i64
+- i16 (above this is special for certain use case, custom hardware)
+- i32 (highly recommended, common use)
+- i64 (below this is special for certain use case, custom hardware)
 - i128
 - i256
 - i512
 
-EXAMPLE:
-- int i32_variableName;
-- int i16_variableName;
-- int int_variableName;
+```c#
+int i32_variableName;
+int i16_variableName;
+```
 
 ## Signed Int
 - s8
@@ -250,8 +277,9 @@ EXAMPLE:
 - s256
 - s512
 
-EXAMPLE:
-- signed int s32_variableName;
+```c#
+signed int s32_variableName;
+```
 
 ## Unsigned Int
 - u8
@@ -262,31 +290,39 @@ EXAMPLE:
 - u256
 - u512
 
-EXAMPLE:
-- unsigned int u32_variableName;
+```c#
+unsigned int u32_variableName;
+```
 
 ## Float
 - f (recommended, common use)
 - f32 (Rust style)
 - f64 (Rust style)
 
+```c#
+float f_variableName;
+```
+
 ## Double
 - d (recommended, common use)
 
-EXAMPLE:
-- double d_variableName;
+```c#
+double d_variableName;
+```
 
 ## String
 - str
 
-EXAMPLE:
-- string str_variableName;
+```c#
+string str_variableName;
+```
 
 ## Char
 - char
 
-EXAMPLE:
-- char char_variableName;
+```c#
+char char_variableName;
+```
 
 ## Vector
 - vec2
@@ -294,20 +330,30 @@ EXAMPLE:
 - vec3
 - vec3Int
 
-EXAMPLE:
-- Vector2 vec2_enemyLocation;
-- Vector3 vec3_playerLocation;
+```c#
+Vector2 vec2_enemyLocation;
+Vector3 vec3_playerLocation;
+```
 
 ## Custom Class
 All custom class that was created by user or 3rdparty all start the following letter
 - m
 
-EXAMPLE:
-- EnemyManager m_enemyManager;
+```c#
+EnemyManager m_enemyManager;
+Enemy[] sz_m_allEnemy;
+List<Enemy> list_m_allEnemy = new List<Enemy>();
+```
 
 # Function Method Naming
-- public int SetNumber(int arg_value);
-- public int GetNumber(int arg_value);
+```c#
+public int SetNumber(int arg_index = 0, int arg_value) {
+  //Content goes here
+}
+public int GetNumber() {
+  //Content goes here
+}
+```
 
 # Interface Class Naming
 
