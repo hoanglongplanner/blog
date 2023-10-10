@@ -18,6 +18,9 @@ Last Updated: 2023.10.09
 - [Standard Rules](#standard-rules)
 - [Camelcase](#camelcase)
 - [Comments](#comments)
+- [Constants](#constants)
+- [Constant Class](#constant-class)
+- [Enum](#enum)
 - [Namespace](#namespace)
 - [Variable Data Size](#variable-data-size)
 - [Variable Naming](#variable-naming)
@@ -116,9 +119,85 @@ public class ExampleClassName {
 }
 ```
 
-For productivity
+For productivity boost, there is also intensity version if needed
 ```c#
 // TODO: Task here
+```
+
+```c#
+// PROBLEM Year.Month.Date : describe current problem, please add year month date in case you forgot, a time reference when someone read your code
+
+// PROBLEM 2023.10.11 : describe current problem, please add year month date in case you forgot
+```
+
+```c#
+// BLAME: Insert someone name here on what basic, go to court regardless if they are right or wrong
+```
+
+Productivity but intensity version:
+```c#
+// TODO TODO: Task here
+
+// TODO TODO TODO: Task here
+
+// TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO: just do it already
+```
+
+```c#
+// BLAME BLAME: Insert the nearest person name to you
+
+// BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME: Blame everyone, just get it done
+```
+
+
+# Constants
+
+In not unorganize way or you do not know how the structure is, it is highly recommended to stick with these 2 following: 
+```c#
+// default: 0
+public static readonly int K_ENEMY_NUMBER = 0; 
+```
+
+```c#
+// default: 0
+public static readonly int KEnemyNumber = 0; 
+```
+
+In organize way, it can be written like this (although not recommended in most case)
+```c#
+// default: 0
+public static readonly int K_EnemySpawner_EnemyNumber = 0; 
+```
+
+# Constant Class
+
+Constant class should only ever be designed as database to get value in everywhere or only be in specific class.
+
+```c#
+public class KEnemyIndex {
+  public static readonly int K_Grunt = 0;
+  public static readonly int K_Boss_MachineGun = 1;
+}
+```
+
+```c#
+public class KEnemyUUID {
+  public static readonly string K_Grunt = "1739198b-51bf-4e44-90b1-1772acfd49ef";
+  public static readonly string K_Boss_MachineGun = "e56c9c80-3778-44f4-a6a0-41bdae4bb26b";
+}
+```
+
+# Enum 
+
+```c#
+public enum KAiAnimation {
+  K_Null = -1,
+  K_None = 0,
+  K_Idle,
+  K_Run,
+  K_AttackMelee,
+  K_AttackRange,
+} 
 ```
 
 # Namespace
@@ -406,12 +485,51 @@ Please just use Roll Pitch Yaw as standard when talking to others regarding 3D S
 ![Alt text](image/20230910-sixdegreesoffreedom.jpg)
 
 # Bad & Removed Design
+Please do not apply this, it will just make the rewriting more painful than it should be.
 
-Name variable as following:
-- int i_something; (confuse with interface class which has same prefix character i, hungarian style to avoid)
-- int int_something; (too redundant)
-- float float_something (too redundant)
-- szxNumber and listxNumber (szx2, szx3, szx4, listx2, listx3) not useful to be this specific, it lead to massive rewrite (it already happen with my own project using previous version, DO NOT) -> szn and listn is enough to be used (however required user to double check if the collection contains many collections - commonly found in database)
+You should spent more times writing code than reading comments
+
+```c#
+// ISSUE: what is the issue here
+// PROBLEM: what is the issue here
+```
+```c#
+// DO NOT: will
+```
+```c#
+// WILL NOT FIX: just use it regardless
+```
+
+```c#
+// UNO: reverse what it is supposed to
+```
+
+```c#
+int i_something; (confuse with interface class which has same prefix character i, hungarian style to avoid)
+```
+```c#
+int int_something; (too redundant and why it is Hungarian Notation again)
+```
+```c#
+float float_something (too redundant, and Hungarian Notation)
+```
+```
+szxNumber and listxNumber (by context it means, sz * number, list * number)
+- szx2
+- szx3
+- szx4
+- listx2
+- listx3
+not useful to be this specific, it lead to massive rewrite (it already happen with my own project using previous version, DO NOT) -> szn and listn is enough to be used (however required user to double check if the collection contains many collections in collections - commonly found in database)
+```
+```
+Add underscore to function name
+int Get_FunctionName();
+
+Please just follow the standards of C++ or C#
+- C++: int getFunctionName();
+- C#: int GetFunctionName();
+```
 
 ## Common Design Pattern
 - Composition
