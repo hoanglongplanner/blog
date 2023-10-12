@@ -17,6 +17,7 @@ Last Updated: 2023.10.09
 - [Introduction](#introduction)
 - [Standard Rules](#standard-rules)
 - [Camelcase](#camelcase)
+- [Header Comment](#header-comment)
 - [Comments](#comments)
 - [Constants](#constants)
 - [Constant Class](#constant-class)
@@ -37,9 +38,16 @@ Last Updated: 2023.10.09
   - [Double](#double)
   - [String](#string)
   - [Char](#char)
+  - [Char](#char-1)
   - [Vector](#vector)
+- [Long](#long)
+- [Long Long](#long-long)
+- [Long Long Double](#long-long-double)
   - [Custom Class](#custom-class)
 - [Function Method Naming](#function-method-naming)
+- [Function Parameter Naming](#function-parameter-naming)
+- [Function Method Prefix](#function-method-prefix)
+- [For Loops](#for-loops)
 - [Interface Class Naming](#interface-class-naming)
 - [Abstract Class Naming](#abstract-class-naming)
 - [ScriptableObject Class Naming](#scriptableobject-class-naming)
@@ -81,10 +89,20 @@ If you use this and like it, please share to any fellow developers that may find
 - Minimize standard as much as you can be.
 - Please try to avoid naming things with s character, it really is an OCD issue many times
 - Avoid many technical debt by being flexible.
+- Delete your old and unused code, it's a debt. Archive it in txt file if needed.
 
 # Camelcase
 - CamelCase
 - SnakeCase
+
+# Header Comment
+
+```c
+//
+//(c) organization - name - year
+//describe what your scripts do and other stuff
+//
+```
 
 # Comments
 
@@ -152,11 +170,16 @@ Productivity but intensity version:
 
 # Constants
 
-In not unorganize way or you do not know how the structure is, it is highly recommended to stick with these 2 following: 
+In a not unorganize way or you do not know how the structure is, it is highly recommended to stick with these 2 following: 
+
+ALL CAPS WITH UNDERSCORE
+
 ```c#
 // default: 0
 public static readonly int K_ENEMY_NUMBER = 0; 
 ```
+
+CamelCase Style
 
 ```c#
 // default: 0
@@ -190,7 +213,7 @@ public class KEnemyUUID {
 # Enum 
 
 ```c#
-public enum KAiAnimation {
+public enum KAIAnimation {
   K_Null = -1,
   K_None = 0,
   K_Idle,
@@ -277,11 +300,13 @@ This style highly recommended to just use VariableType_VariableName
 
 ```c#
 private int i32_number;
+private double[] sz_d_number;
 ```
 
 However you can simply use C# Standard if needed, start with _
 
 ```c#
+private int _i32_number;
 private double[] _sz_d_number;
 ```
 
@@ -403,6 +428,13 @@ string str_variableName;
 char char_variableName;
 ```
 
+## Char
+- uchar
+
+```c#
+unsigned char uchar_variableName;
+```
+
 ## Vector
 - vec2
 - vec2Int
@@ -412,6 +444,27 @@ char char_variableName;
 ```c#
 Vector2 vec2_enemyLocation;
 Vector3 vec3_playerLocation;
+```
+
+# Long
+- l
+
+```c
+long l_something;
+```
+
+# Long Long
+- ll
+
+```c
+long long ll_something;
+```
+
+# Long Long Double
+- lld
+
+```c
+long long double lld_something;
 ```
 
 ## Custom Class
@@ -431,6 +484,54 @@ public int SetNumber(int arg_index = 0, int arg_value) {
 }
 public int GetNumber() {
   //Content goes here
+}
+```
+
+# Function Parameter Naming
+
+Each parameter require to be prefix with arg_
+
+```c#
+public void SetNumber(int arg_value) {
+  value = arg_value;
+}
+```
+
+# Function Method Prefix
+
+- Init
+- Start
+- Update
+- Increase
+- Decrease
+- Add
+- Remove
+- Clear
+- Sort
+- Get
+- New
+- Create
+- Destroy
+- Set
+- Reset
+- On / Event
+- Is
+- IsEqual
+- IsContain
+- Has
+- Routine / Schedule - for Async
+
+# For Loops
+Alphabet, but not enforce
+- i > j > k > l > m > n > o > p
+
+```c#
+for(int i = 0; i < 0; i++) {
+  for(int j = 0; j < 0; j++) {
+    for(int k = 0; k < 0; k++) {
+
+    }
+  }
 }
 ```
 
