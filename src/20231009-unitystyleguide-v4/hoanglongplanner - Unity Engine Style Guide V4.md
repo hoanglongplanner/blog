@@ -1,10 +1,10 @@
 ---
-title: Unity Engine CSharp Style Guide V4.0
+title: Unity Engine CSharp Style Guide V4.0.0
 author: hoanglongplanner
 date: 2023.10.09
 ---
 
-# Unity Engine CSharp Style Guide V4.0
+# Unity Engine CSharp Style Guide V4.0.0
 Author: hoanglongplanner 
 
 Organization: ViolettaLappy
@@ -12,7 +12,7 @@ Organization: ViolettaLappy
 Last Updated: 2023.10.09
 
 # Table of Contents
-- [Unity Engine CSharp Style Guide V4.0](#unity-engine-csharp-style-guide-v40)
+- [Unity Engine CSharp Style Guide V4.0.0](#unity-engine-csharp-style-guide-v400)
 - [Table of Contents](#table-of-contents)
 - [Introduction](#introduction)
 - [Standard Rules](#standard-rules)
@@ -503,7 +503,11 @@ You should spent more times writing code than reading comments
 ```c#
 // UNO: reverse what it is supposed to
 ```
-
+```c#
+//this style is too unnatural, uncanny, hard to deduce it is positive or not (bad design syntax from Unreal Engine)
+bool bCanDone;
+bool b_canBeDone;
+```
 ```c#
 int i_something; (confuse with interface class which has same prefix character i, hungarian style to avoid)
 ```
