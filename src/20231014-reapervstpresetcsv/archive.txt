@@ -1,0 +1,9 @@
+## Value (0 <-> 1)
+- This value is actually the real value that program see, and how plugin programmer make their VST
+- This value is interpreted with algorithm
+- EXAMPLE: Unity Mixer (-80 db is resulted from logaric algorithm which i set to, there is no such thing is -inf)
+
+## Context Value
+- The context for the end user to see
+- They don't want to see 1, 2, 3, 4 which doesn't make sense
+- The user (composer, video editor) would only need to see 100% or +6 db
