@@ -1,5 +1,7 @@
 # Getting Start Webview
 
+// Add image here
+
 - Please note this is only apply to Webview in 2023.10.16
 - The approach may be different in 1 month or so
 
@@ -9,7 +11,7 @@
 - [Introduction](#introduction)
 - [Getting Start](#getting-start)
   - [How to install](#how-to-install)
-  - [Sample Script](#sample-script)
+  - [How to use](#how-to-use)
 - [References](#references)
 
 # Introduction
@@ -17,11 +19,11 @@
 # Getting Start
 
 ## How to install
-- Run batch script to get all things set up
-- Setup Visual Studio
+- Git clone
+- Run build.sh from script/build.sh to compile and make project
 
-## Sample Script
-- How to use it
+## How to use
+- The API call will mostly based on Microsoft Webview2
 
 # References
-- Link to Github
+- https://github.com/webview/webview

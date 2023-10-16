@@ -23,4 +23,5 @@
 - Setup Visual Studio
 
 # References
-- Link to Github
+- https://bitbucket.org/chromiumembedded/cef-project/src/master/
+- https://cef-builds.spotifycdn.com/index.html
