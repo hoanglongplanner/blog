@@ -14,7 +14,7 @@ date: 2023.14.10
 - [Related Links](#related-links)
 - [Introduction](#introduction)
 - [Acknowledgement \& Disclaimer \& Limitation](#acknowledgement--disclaimer--limitation)
-- [Code Explanation](#code-explanation)
+- [Code Breakdown](#code-breakdown)
 - [Original Source Code](#original-source-code)
 - [Modified Source Code](#modified-source-code)
 
@@ -27,9 +27,11 @@ date: 2023.14.10
 
 # Introduction
 
-Extract all exposed paramters that Reaper has
+tldr: How to get all parameters of a VST in Reaper and export to CSV and TXT. Source code is in [Related Links](#related-links)
 
 This script is ELL2 format that Reaper currently default to
+
+Extract all exposed paramters that Reaper has
 
 Available use cases
 - Archive purpose the VST parameters, unable to read it for other side, render the proprietary format into useless.
@@ -58,7 +60,7 @@ Two types:
 1. H2P like u-he Zebralette or XML like Izotope Trash 2
 2. Gibberish Readable Binary Format like NMSV, FXP and FXB (FX Preset, FX Bank)
 
-# Code Explanation
+# Code Breakdown
 
 Program Abstraction:
 - We loop though all parameters available for that FX in Reaper
@@ -92,6 +94,16 @@ sprintf(#pv2,"%05.2f, %05.2f, %05.2f, %05.2f, %05.2f, %05.2f, %05.2f, %05.2f, %0
                        minval, maxval, minval_ex, midval_ex, maxval_ex,
                        step, smallstep, largestep, istoggle, 
                        pval, pval_ex, pval_norm );
+```
+
+The code below specify where Reaper should export those VST parameters to specific file format (CSV and TXT).
+
+```c
+//--FilePath--
+K_FileLocation_CSV = "/Scripts/VstPresetParameter.csv"; 
+K_FileLocation_TXT = "/Scripts/VstPresetParameter.txt";
+ParseTo(K_FileLocation_CSV);
+ParseTo(K_FileLocation_TXT);
 ```
 
 # Original Source Code
