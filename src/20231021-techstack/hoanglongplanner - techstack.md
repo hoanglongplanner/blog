@@ -67,6 +67,13 @@ flowchart TB
     GoogleAnalystics
     end
 
+    subgraph Graphic
+    p5.js
+    Pixi.js
+    Three.js
+    WebGPU    
+    end
+
     subgraph Game Development
     ThreeJS
     WebGPU
