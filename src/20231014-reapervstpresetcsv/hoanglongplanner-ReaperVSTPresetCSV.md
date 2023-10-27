@@ -22,11 +22,12 @@ date: 2023.27.10
 
 # Links
 - Repo
+- Blogger
+- Wix
+- Link to PDF Format Pandoc
 - EEL2 Original Script
 - EEL2 New Script
-- Blogger
-- LinkedIn
-- Link to PDF Format Pandoc
+- <https://youtu.be/ir-Vk7YBjHo?si=2MeEDHw0jYWVCrbS>
 
 # References
 - <https://www.cockos.com/EEL2/>
@@ -52,7 +53,7 @@ This script able to export to following formats:
 
 # Acknowledgement & Disclaimer & Limitation
 
-This code was written by DarkStar or other users, on Reaper forum post. I make changes to better suited for purposes stated above, the script test okay on Reaper 6.72 / Windows 11.
+This code was written by users, on Reaper forum post. I make changes to better suited for purposes stated above, the script test okay on Reaper 6.72 / Windows 11.
 
 This script has a limitation, since this is just a wrapper script that use Reaper API calls to get these values available publicly
 - This cannot turn into preset to be use in instrument.
