@@ -33,6 +33,7 @@ date: 2023.27.10
 - <https://www.cockos.com/reaper/sdk/reascript/reascripthelp.html>
 - <https://forum.cockos.com/showthread.php?t=180466>
 - <https://forum.cockos.com/showthread.php?t=132627>
+- <https://forum.cockos.com/showpost.php?p=2249924&postcount=447>
 
 # Introduction
 
@@ -40,38 +41,32 @@ tldr: Use Reaper to get all parameters of a VST in the 1st track and export thos
 
 This script was written as ELL2 format that Reaper support. More info can be found at <https://www.cockos.com/EEL2/> with ReaScript API <https://www.cockos.com/reaper/sdk/reascript/reascripthelp.html>
 
-Extract all exposed paramters that Reaper has
+Usecases:
+- Archival purpose, export VST parameters into raw readable format text
+- For use in other audio softwares
 
-Available use cases
-- Archive purpose the VST parameters, unable to read it for other side, render the proprietary format into useless.
-- Use for other audio programs
-
-Has following features
-- Export FX Parameters into raw readable format text
-- Export formats:
-  - TXT
-  - CSV
+This script able to export to following formats:
+- CSV
+- TXT
+- From above, you can use 3rd party libraries to convert to other formats (XML, etc...)
 
 # Acknowledgement & Disclaimer & Limitation
 
-This code was written by DarkStar or other users, on Reaper forum post. Test on Reaper 6.72.
+This code was written by DarkStar or other users, on Reaper forum post. I make changes to better suited for purposes stated above, the script test okay on Reaper 6.72 / Windows 11.
 
-To actually get the real preset
-- It was encrypted as binary
-
-There are some parameter functions that I'm currently not sure what about yet. (Steps, Context)
-
-This script has a limitation, since this is just a wrapper script that use Reaper API calls to get these values publicly, which is not really the best way to know.
+This script has a limitation, since this is just a wrapper script that use Reaper API calls to get these values available publicly
 - This cannot turn into preset to be use in instrument.
-- In order to really archive the real preset of specific plugin, it would have to be some kind of format that is readable in any text editors like this which anyone who use to manipulate data files (JSON, XML, even TXT) not giberish stuffs
+- In order to really get the real preset of specific plugin, it would have to be the native format is using however sometimes it will be encrypted with unreaddable weird symbols and gibberish binary stuffs
 
-Two types:
-1. H2P like u-he Zebralette or XML like Izotope Trash 2
-2. Gibberish Readable Binary Format like NMSV, FXP and FXB (FX Preset, FX Bank)
+Please note: This script will never be accurate, only the native format (XML, JSON, H2P, NMSV, FXP, FXB, etc...) that each audio instrument supports is
+
+To illustrated this inaccuracy I'm talking about, here's some examples
+- In H2P, a long string full of numbers and letter, supposedly represent as sample wavetable, which this script cannot extract it from the internal of u-he audio instruments
+- Some audio instruments will use values as enum types, so you have to guess what it is beyond 0 and 1
 
 # Video Showcase
 
-This is how it is supposed to work
+<https://youtu.be/ir-Vk7YBjHo?si=2MeEDHw0jYWVCrbS>
 
 # CSV Showcase Old
 
