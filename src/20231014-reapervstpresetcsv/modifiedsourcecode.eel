@@ -21,32 +21,32 @@ function secondary_info(Pidx)
   RV = TrackFX_GetParameterStepSizes(tr, 0, Pidx, step, smallstep, largestep, istoggle);
   
   sprintf(#pv2,
-  "%05.2f, %05.2f, %05.2f, %05.2f,\ ", 
+  "%05.2f,%05.2f,%05.2f,%05.2f,", 
   pval_norm,
   midval_ex,
   minval,
   maxval
   );
   
-  //Get all values (current, middle, min, max)
+  //Get context current
   #pv2 += #form_pv;
   
   //Reaper Hack to get context middle value
   TrackFX_SetParam(tr, 0, Pidx, midval_ex);
   TrackFX_GetFormattedParamValue(tr, 0, Pidx, #form_def);
-  #pv2 += ", ";
+  #pv2 += ",";
   #pv2 += #form_def;
   
   //Reaper Hack to get context minimum value
   TrackFX_SetParam(tr, 0, Pidx, minval_ex);
   TrackFX_GetFormattedParamValue(tr, 0, Pidx, #form_min);
-  #pv2 += ", ";
+  #pv2 += ",";
   #pv2 += #form_min;
   
   //Reaper Hack to get context maximum value
   TrackFX_SetParam(tr, 0, Pidx, maxval_ex);
   TrackFX_GetFormattedParamValue(tr, 0, Pidx, #form_max);
-  #pv2 += ", ";
+  #pv2 += ",";
   #pv2 += #form_max;
   
   //Append all values
@@ -79,7 +79,7 @@ function ParseTo(file_name)
       #presetName += "\n";
       fwrite(file, #presetName, 0);      
       
-      #K_HEADER = "ID, Name, Value Current, Value Middle, Value Min, Value Max, Context Current, Context Middle, Context Min, Context Max\n";
+      #K_HEADER = "ID,Name,Value Current,Value Middle,Value Min,Value Max,Context Current,Context Middle,Context Min,Context Max\n";
 
       //Write header table
       fwrite(file, #K_HEADER, 0);
@@ -90,11 +90,11 @@ function ParseTo(file_name)
 
       loop(num_params,TrackFX_GetParamName(tr, 0, idx, #param_name) ? (
           //Prefix Param Num
-          sprintf(#pvalues,"%03d, ", idx +1-1);
+          sprintf(#pvalues,"%03d,", idx +1-1);
           //Append parameter name
           #pvalues += #param_name;
           //Seperate parameter value
-          #pvalues += ", ";
+          #pvalues += ",";
           //#pvalues += #param_name; 
           
           pv = TrackFX_GetParam(tr, 0, idx, minvalOut, maxvalOut);
