@@ -50,14 +50,14 @@ header-includes:
 
 # Introduction
 
-tldr: Use Reaper to get all parameters of a VST in the 1st track and export those values to CSV and TXT.
+Tldr: Use Reaper to get all parameters of a VST in the 1st track and export those values to CSV and TXT.
 
 This script was written as ELL2 format that Reaper support. More info can be found at [https://www.cockos.com/EEL2/](https://www.cockos.com/EEL2/) with ReaScript API [https://www.cockos.com/reaper/sdk/reascript/reascripthelp.html](https://www.cockos.com/reaper/sdk/reascript/reascripthelp.html)
 
-Usecases:
+Use cases:
 
 - Archival purpose, export VST parameters into raw readable format text
-- For use in other audio softwares (if possible)
+- For use in other audio software products (if possible)
 
 This script able to export to following formats:
 
@@ -71,21 +71,21 @@ This code was written by users, on Reaper forum post. I make changes to better s
 
 This script has limitations, since this is just a wrapper script that use Reaper API calls to get these values available publicly
 
-- This is just a speadsheet with all parameters listed
-- In order to really get the real preset of specific plugin, it would have to be the native format is using however sometimes it will be encrypted with unreaddable weird symbols and gibberish binary stuffs
+- This is just a spreadsheet with all parameters listed
+- In order to really get the real preset of specific plugin, it would have to be the native format is using however sometimes it will be encrypted with unreadable weird symbols and gibberish binary stuffs
 
 Please note: This script will never be accurate, only the native format (XML, JSON, H2P, NMSV, FXP, FXB, etc...) that each audio instrument supports is
 
-To illustrated this inaccuracy I'm talking about, here's some examples
+To illustrate this inaccuracy I'm talking about, here are some examples
 
 - In H2P preset use for u-he synths, a long string full of numbers and letter, supposedly represent as sample wavetable, which this script cannot extract it from the internal engine of u-he audio instruments
-- Some audio instruments will use values as enum types, so you have to guess what the real context between 0 and 1
+- Some audio instruments will use values as Enum types, so you have to guess what the real context between 0 and 1
 
 \pagebreak
 
 # Code Breakdown
 
-The code below will initialise and set the values by using provided Reaper API functions, in this case we only want to get parameter values from the 1st track only.
+The code below will initialize and set the values by using provided Reaper API functions, in this case we only want to get parameter values from the 1st track only.
 
 ```c
 RV = TrackFX_GetFormattedParamValue(tr, 0, Pidx, #form_pv);
@@ -95,7 +95,7 @@ pval_norm  = TrackFX_GetParamNormalized(tr, 0, Pidx);
 RV = TrackFX_GetParameterStepSizes(tr, 0, Pidx, step, smallstep, largestep, istoggle);
 ```
 
-The code below will get parameter values (different than context value), round and automatically append these values into #pv2 array
+The code below will get parameter values (different from context value), round and automatically append these values into #pv2 array
 
 - min
 - max
