@@ -29,6 +29,7 @@ header-includes:
 - [https://hoanglongplanner.blogspot.com/2023/10/get-all-vst-parameters-to-csv-in-reaper.html](https://hoanglongplanner.blogspot.com/2023/10/get-all-vst-parameters-to-csv-in-reaper.html)
 - [https://hoanglongplanner.wixsite.com/blog/post/get-all-vst-parameters-to-csv-in-reaper](https://hoanglongplanner.wixsite.com/blog/post/get-all-vst-parameters-to-csv-in-reaper)
 - [https://github.com/hoanglongplanner/share-blog/tree/main/doc](https://github.com/hoanglongplanner/share-blog/tree/main/doc)
+- [https://github.com/hoanglongplanner/share-blog/blob/main/doc/hoanglongplanner-ReaperVSTPresetCSV.pdf](https://github.com/hoanglongplanner/share-blog/blob/main/doc/hoanglongplanner-ReaperVSTPresetCSV.pdf)
 - [https://github.com/hoanglongplanner/share-blog/tree/main/src](https://github.com/hoanglongplanner/share-blog/tree/main/src)
 - [https://github.com/hoanglongplanner/share-blog/tree/main/src/hoanglongplanner-ReaperVSTPresetCSV](https://github.com/hoanglongplanner/share-blog/tree/main/src/hoanglongplanner-ReaperVSTPresetCSV)
 - [https://youtu.be/ir-Vk7YBjHo?si=2MeEDHw0jYWVCrbS](https://youtu.be/ir-Vk7YBjHo?si=2MeEDHw0jYWVCrbS)
