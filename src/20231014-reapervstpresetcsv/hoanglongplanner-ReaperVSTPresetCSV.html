@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>hoanglongplanner-ReaperVSTPresetCSV.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="get-all-vst-parameters-to-csv-in-reaper">Get all VST Parameters to CSV in Reaper</h1>
+<p><img src="image/preview.png" alt="Alt text"></p>
+<h1 id="table-of-contents">Table of Contents</h1>
+<ul>
+<li><a href="#get-all-vst-parameters-to-csv-in-reaper">Get all VST Parameters to CSV in Reaper</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#links">Links</a></li>
+<li><a href="#references">References</a></li>
+<li><a href="#video-showcase">Video Showcase</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#acknowledgement--disclaimer--limitation">Acknowledgement &amp; Disclaimer &amp; Limitation</a></li>
+<li><a href="#code-breakdown">Code Breakdown</a></li>
+</ul>
+<h1 id="links">Links</h1>
+<ul>
+<li>Repo</li>
+<li>Blogger</li>
+<li>Wix</li>
+<li>https://github.com/hoanglongplanner/share-blog/tree/main/doc</li>
+<li>https://github.com/hoanglongplanner/share-blog/tree/main/src</li>
+<li>https://github.com/hoanglongplanner/share-blog/tree/main/src/hoanglongplanner-ReaperVSTPresetCSV</li>
+<li>https://youtu.be/ir-Vk7YBjHo?si=2MeEDHw0jYWVCrbS</li>
+</ul>
+<h1 id="references">References</h1>
+<ul>
+<li>https://www.cockos.com/EEL2/</li>
+<li>https://www.cockos.com/reaper/sdk/reascript/reascripthelp.html</li>
+<li>https://forum.cockos.com/showthread.php?t=180466</li>
+<li>https://forum.cockos.com/showthread.php?t=132627</li>
+<li>https://forum.cockos.com/showpost.php?p=2249924&amp;postcount=447</li>
+</ul>
+<h1 id="video-showcase">Video Showcase</h1>
+<p>https://youtu.be/ir-Vk7YBjHo?si=2MeEDHw0jYWVCrbS</p>
+<h1 id="introduction">Introduction</h1>
+<p>tldr: Use Reaper to get all parameters of a VST in the 1st track and export those values to CSV and TXT.</p>
+<p>This script was written as ELL2 format that Reaper support. More info can be found at https://www.cockos.com/EEL2/ with ReaScript API https://www.cockos.com/reaper/sdk/reascript/reascripthelp.html</p>
+<p>Usecases:</p>
+<ul>
+<li>Archival purpose, export VST parameters into raw readable format text</li>
+<li>For use in other audio softwares</li>
+</ul>
+<p>This script able to export to following formats:</p>
+<ul>
+<li>CSV</li>
+<li>TXT</li>
+<li>From then on, you can use 3rd party libraries to convert to other formats (XML, etc...)</li>
+</ul>
+<h1 id="acknowledgement--disclaimer--limitation">Acknowledgement &amp; Disclaimer &amp; Limitation</h1>
+<p>This code was written by users, on Reaper forum post. I make changes to better suited for purposes stated above, the script test okay on Reaper 6.72 / Windows 11.</p>
+<p>This script has limitations, since this is just a wrapper script that use Reaper API calls to get these values available publicly</p>
+<ul>
+<li>This is just a speadsheet with all parameters listed</li>
+<li>In order to really get the real preset of specific plugin, it would have to be the native format is using however sometimes it will be encrypted with unreaddable weird symbols and gibberish binary stuffs</li>
+</ul>
+<p>Please note: This script will never be accurate, only the native format (XML, JSON, H2P, NMSV, FXP, FXB, etc...) that each audio instrument supports is</p>
+<p>To illustrated this inaccuracy I'm talking about, here's some examples</p>
+<ul>
+<li>In H2P preset use for u-he synths, a long string full of numbers and letter, supposedly represent as sample wavetable, which this script cannot extract it from the internal of u-he audio instruments</li>
+<li>Some audio instruments will use values as enum types, so you have to guess what it is beyond 0 and 1</li>
+</ul>
+<h1 id="code-breakdown">Code Breakdown</h1>
+<p>The code below will initialise and set the values by using provided Reaper API functions, in this case we only want to get parameter values from the 1st track only.</p>
+<pre class="hljs"><code><div>RV = TrackFX_GetFormattedParamValue(tr, <span class="hljs-number">0</span>, Pidx, #form_pv);
+pval = TrackFX_GetParam(tr, <span class="hljs-number">0</span>, Pidx,  minval, maxval);
+pval_ex = TrackFX_GetParamEx(tr, <span class="hljs-number">0</span>, Pidx, minval_ex, maxval_ex, midval_ex);
+pval_norm  = TrackFX_GetParamNormalized(tr, <span class="hljs-number">0</span>, Pidx);
+RV = TrackFX_GetParameterStepSizes(tr, <span class="hljs-number">0</span>, Pidx, <span class="hljs-built_in">step</span>, smallstep, largestep, istoggle);
+</div></code></pre>
+<p>The code below will get parameter values (different than context value), round and automatically append these values into #pv2 array</p>
+<ul>
+<li>min</li>
+<li>max</li>
+<li>middle</li>
+<li>step (how much to increase and decrease knob, 0.1 0.01 0.001) (DISCARD)</li>
+<li>isToggle (in theory it should only be 0 or 1) (DISCARD)</li>
+<li>contextValue</li>
+</ul>
+<p>Note: DISCARD meaning it won't be present in the new script, I discard these value because they are not any significant at all</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// ! ORIGINAL VERSION</span>
+<span class="hljs-built_in">sprintf</span>(#pv2,<span class="hljs-string">"%05.2f, %05.2f, %05.2f, %05.2f, %05.2f, %05.2f, %05.2f, %05.2f, %05.2f,%05.2f, %05.2f, %05.2f,\ "</span>, 
+                       minval, maxval, minval_ex, midval_ex, maxval_ex,
+                       <span class="hljs-built_in">step</span>, smallstep, largestep, istoggle, 
+                       pval, pval_ex, pval_norm );
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// ! NEW VERSION</span>
+<span class="hljs-built_in">sprintf</span>(#pv2,
+  <span class="hljs-string">"%05.2f, %05.2f, %05.2f, %05.2f,\ "</span>, 
+  pval_norm,
+  midval_ex,
+  minval,
+  maxval
+);
+</div></code></pre>
+<p>The code below will get context values.</p>
+<p>These are just hacks to get highest/lowest/middle value by manipulating Reaper to set the 1st track of highest/lowest/middle possible value.</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//Reaper Hack to get middle value</span>
+TrackFX_SetParam(tr, <span class="hljs-number">0</span>, Pidx, midval_ex);
+TrackFX_GetFormattedParamValue(tr, <span class="hljs-number">0</span>, Pidx, #form_def);
+#pv2 += <span class="hljs-string">", "</span>;
+#pv2 += #form_def;
+    
+<span class="hljs-comment">//Reaper Hack to get minimum value</span>
+TrackFX_SetParam(tr, <span class="hljs-number">0</span>, Pidx, minval_ex);
+TrackFX_GetFormattedParamValue(tr, <span class="hljs-number">0</span>, Pidx, #form_min);
+#pv2 += <span class="hljs-string">", "</span>;
+#pv2 += #form_min;
+    
+<span class="hljs-comment">//Reaper Hack to get maximum value</span>
+TrackFX_SetParam(tr, <span class="hljs-number">0</span>, Pidx, maxval_ex);
+TrackFX_GetFormattedParamValue(tr, <span class="hljs-number">0</span>, Pidx, #form_max);
+#pv2 += <span class="hljs-string">", "</span>;
+#pv2 += #form_max;
+</div></code></pre>
+<p>All value items in #pv2 will be appended to #pvalues</p>
+<pre class="hljs"><code><div><span class="hljs-meta">#pvalues += #pv2; </span>
+</div></code></pre>
+<p>The code below specify where Reaper should export those VST parameters to (CSV and TXT), please change this to suit your own need. By default, Reaper will export at the script folder.</p>
+<p><img src="image/exportfilepath.png" alt="Alt text"></p>
+<pre class="hljs"><code><div><span class="hljs-comment">//--FilePath--</span>
+K_FileLocation_CSV = <span class="hljs-string">"/Scripts/VstPresetParameter.csv"</span>; 
+K_FileLocation_TXT = <span class="hljs-string">"/Scripts/VstPresetParameter.txt"</span>;
+ParseTo(K_FileLocation_CSV);
+ParseTo(K_FileLocation_TXT);
+</div></code></pre>
+
+</body>
+</html>

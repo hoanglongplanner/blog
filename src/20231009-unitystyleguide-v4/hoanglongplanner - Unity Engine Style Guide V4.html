@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>hoanglongplanner - Unity Engine Style Guide V4.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="unity-engine-csharp-style-guide-v400">Unity Engine CSharp Style Guide V4.0.0</h1>
+<p>Author: hoanglongplanner</p>
+<p>Organization: ViolettaLappy</p>
+<p>Last Updated: 2023.10.09</p>
+<h1 id="table-of-contents">Table of Contents</h1>
+<ul>
+<li><a href="#unity-engine-csharp-style-guide-v400">Unity Engine CSharp Style Guide V4.0.0</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#standard-rules">Standard Rules</a></li>
+<li><a href="#camelcase">Camelcase</a></li>
+<li><a href="#comments">Comments</a></li>
+<li><a href="#constants">Constants</a></li>
+<li><a href="#constant-class">Constant Class</a></li>
+<li><a href="#enum">Enum</a></li>
+<li><a href="#namespace">Namespace</a></li>
+<li><a href="#variable-data-size">Variable Data Size</a></li>
+<li><a href="#variable-naming">Variable Naming</a>
+<ul>
+<li><a href="#construction">Construction</a></li>
+<li><a href="#public-variable">Public Variable</a></li>
+<li><a href="#private-variable">Private Variable</a></li>
+<li><a href="#array">Array</a></li>
+<li><a href="#list">List</a></li>
+<li><a href="#boolean">Boolean</a></li>
+<li><a href="#int">Int</a></li>
+<li><a href="#signed-int">Signed Int</a></li>
+<li><a href="#unsigned-int">Unsigned Int</a></li>
+<li><a href="#float">Float</a></li>
+<li><a href="#double">Double</a></li>
+<li><a href="#string">String</a></li>
+<li><a href="#char">Char</a></li>
+<li><a href="#vector">Vector</a></li>
+<li><a href="#custom-class">Custom Class</a></li>
+</ul>
+</li>
+<li><a href="#function-method-naming">Function Method Naming</a></li>
+<li><a href="#interface-class-naming">Interface Class Naming</a></li>
+<li><a href="#abstract-class-naming">Abstract Class Naming</a></li>
+<li><a href="#scriptableobject-class-naming">ScriptableObject Class Naming</a></li>
+<li><a href="#return">Return</a></li>
+<li><a href="#considerations">Considerations</a></li>
+<li><a href="#bad--removed-design">Bad &amp; Removed Design</a>
+<ul>
+<li><a href="#common-design-pattern">Common Design Pattern</a></li>
+</ul>
+</li>
+<li><a href="#do-not-in-any-circumstances">DO NOT IN ANY CIRCUMSTANCES</a></li>
+<li><a href="#feedback">Feedback</a></li>
+<li><a href="#contact-information">Contact Information</a></li>
+<li><a href="#references">References</a></li>
+</ul>
+<h1 id="introduction">Introduction</h1>
+<p>This just a style guide for development in Unity Engine that aim for project development. NOT FOR 3RD PARTY EXTENSION.</p>
+<p>You don't need to uphold yourself to any standard, as long as you can work comfortable and get to the end product at the end.</p>
+<p>The cons of using this style:</p>
+<ul>
+<li>Take more time to rewrite (which is not a good thing)</li>
+<li>NOT HUNGARIAN NOTATION BUT YET THE MINIMAL VERSION</li>
+<li>Your IDE is already good enough to deduce what type, if you hover the text (unless you use notepad or terminal console or Cult of Vi or Church of Emacs)</li>
+<li>Explicit Heavy (break your fingers more)</li>
+</ul>
+<p>Inspire by the following style guide:</p>
+<ul>
+<li>Google C++ Style Guide</li>
+</ul>
+<p>Inspire by the following programming language:</p>
+<ul>
+<li>AngelScript</li>
+<li>Rust</li>
+<li>C++</li>
+</ul>
+<p>It has been adopt in my own development, and in some public projects already. However this is still a stylize version.</p>
+<p>If you use this and like it, please share to any fellow developers that may find good use of the knowledge. Please properly cite and credit to the original author.</p>
+<h1 id="standard-rules">Standard Rules</h1>
+<ul>
+<li>How you say it naturally, should be named as that. DO NOT FORCE NAMING.</li>
+<li>Minimize standard as much as you can be.</li>
+<li>Please try to avoid naming things with s character, it really is an OCD issue many times</li>
+<li>Avoid many technical debt by being flexible.</li>
+</ul>
+<h1 id="camelcase">Camelcase</h1>
+<ul>
+<li>CamelCase</li>
+<li>SnakeCase</li>
+</ul>
+<h1 id="comments">Comments</h1>
+<p>You should not spend much time in writing comments</p>
+<p>Recommended in most use case :</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// Comment goes here</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">/* 
+Paragraph comment goes here
+*/</span>
+</div></code></pre>
+<p>Header comment when need to seperate out of the above when use in conjunction:</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//--[Variable]--</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ExampleClassName</span> {
+  <span class="hljs-comment">//--[Variable Header]--</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> i32_something;
+  <span class="hljs-comment">//--[Function Header]--</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Update</span>(<span class="hljs-params"></span>)</span>{
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">GetNumber</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+  }
+}
+</div></code></pre>
+<p>For productivity boost, there is also intensity version if needed</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> Task here</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// PROBLEM Year.Month.Date : describe current problem, please add year month date in case you forgot, a time reference when someone read your code</span>
+
+<span class="hljs-comment">// PROBLEM 2023.10.11 : describe current problem, please add year month date in case you forgot</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// BLAME: Insert someone name here on what basic, go to court regardless if they are right or wrong</span>
+</div></code></pre>
+<p>Productivity but intensity version:</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// TODO <span class="hljs-doctag">TODO:</span> Task here</span>
+
+<span class="hljs-comment">// TODO TODO <span class="hljs-doctag">TODO:</span> Task here</span>
+
+<span class="hljs-comment">// TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO <span class="hljs-doctag">TODO:</span> just do it already</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// BLAME BLAME: Insert the nearest person name to you</span>
+
+<span class="hljs-comment">// BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME BLAME: Blame everyone, just get it done</span>
+</div></code></pre>
+<h1 id="constants">Constants</h1>
+<p>In not unorganize way or you do not know how the structure is, it is highly recommended to stick with these 2 following:</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// default: 0</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> <span class="hljs-keyword">int</span> K_ENEMY_NUMBER = <span class="hljs-number">0</span>; 
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// default: 0</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> <span class="hljs-keyword">int</span> KEnemyNumber = <span class="hljs-number">0</span>; 
+</div></code></pre>
+<p>In organize way, it can be written like this (although not recommended in most case)</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// default: 0</span>
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> <span class="hljs-keyword">int</span> K_EnemySpawner_EnemyNumber = <span class="hljs-number">0</span>; 
+</div></code></pre>
+<h1 id="constant-class">Constant Class</h1>
+<p>Constant class should only ever be designed as database to get value in everywhere or only be in specific class.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">KEnemyIndex</span> {
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> <span class="hljs-keyword">int</span> K_Grunt = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> <span class="hljs-keyword">int</span> K_Boss_MachineGun = <span class="hljs-number">1</span>;
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">KEnemyUUID</span> {
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> <span class="hljs-keyword">string</span> K_Grunt = <span class="hljs-string">"1739198b-51bf-4e44-90b1-1772acfd49ef"</span>;
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> <span class="hljs-keyword">string</span> K_Boss_MachineGun = <span class="hljs-string">"e56c9c80-3778-44f4-a6a0-41bdae4bb26b"</span>;
+}
+</div></code></pre>
+<h1 id="enum">Enum</h1>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">enum</span> KAiAnimation {
+  K_Null = <span class="hljs-number">-1</span>,
+  K_None = <span class="hljs-number">0</span>,
+  K_Idle,
+  K_Run,
+  K_AttackMelee,
+  K_AttackRange,
+} 
+</div></code></pre>
+<h1 id="namespace">Namespace</h1>
+<p>Namespace is highly recommended.
+It seperate your code from others.</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">namespace</span> <span class="hljs-title">namespacegoeshere</span> {
+
+}
+</div></code></pre>
+<h1 id="variable-data-size">Variable Data Size</h1>
+<p>It is good to refresh your knowledge, there are limitation in computer hardware regarding calculation and runtime.</p>
+<h1 id="variable-naming">Variable Naming</h1>
+<h2 id="construction">Construction</h2>
+<p>For variable:</p>
+<ul>
+<li>CollectionType_VariableType_VariableName</li>
+<li>CollectionType_VariableName</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span>[] sz_i32_enemyNumber;
+<span class="hljs-keyword">int</span>[] sz_enemyNumber;
+<span class="hljs-keyword">string</span> str_characterName;
+</div></code></pre>
+<p>For variable (with pointer):</p>
+<ul>
+<li>CollectionType_VariableType_pVariableName</li>
+</ul>
+<p>EXAMPLE:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span>* i32_pEnemyNumber;
+CharacterSpawner* m_pSomething;
+</div></code></pre>
+<h2 id="public-variable">Public Variable</h2>
+<p>Public means public, by design it should mainly use in external class to reference variable &amp; functions, rarely use in their own creation class</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> i32_number;
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> Number {
+  <span class="hljs-keyword">get</span> {
+    <span class="hljs-keyword">return</span> i32_number;
+  }
+  <span class="hljs-keyword">set</span> {
+    i32_number = <span class="hljs-keyword">value</span>;
+  }
+}
+
+<span class="hljs-keyword">private</span> EnemySpawner[] sz_m_enemySpawner;
+<span class="hljs-keyword">public</span> EnemySpawner[] EnemySpawners {
+  <span class="hljs-keyword">get</span> {
+    <span class="hljs-keyword">return</span> sz_m_enemySpawner;
+  }
+  <span class="hljs-keyword">set</span> {
+    sz_m_enemySpawner = <span class="hljs-keyword">value</span>;
+  }
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> i32_number;
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SetNumber</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> arg_value</span>)</span> {
+  i32_number = arg_value;
+}
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> GetNumber {
+  <span class="hljs-keyword">return</span> i32_number;  
+}
+</div></code></pre>
+<h2 id="private-variable">Private Variable</h2>
+<p>This style highly recommended to just use VariableType_VariableName</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> i32_number;
+</div></code></pre>
+<p>However you can simply use C# Standard if needed, start with _</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">private</span> <span class="hljs-keyword">double</span>[] _sz_d_number;
+</div></code></pre>
+<h2 id="array">Array</h2>
+<p>Normal Array:</p>
+<ul>
+<li>sz_somethingName</li>
+<li>sz_type_somethingName</li>
+</ul>
+<p>Array in Array:</p>
+<ul>
+<li>szn_somethingName</li>
+<li>szn_type_somethingName</li>
+</ul>
+<h2 id="list">List</h2>
+<p>Normal List:</p>
+<ul>
+<li>list_something</li>
+<li>list_type_something</li>
+</ul>
+<pre class="hljs"><code><div>List&lt;<span class="hljs-keyword">float</span>&gt; list_f_allEntityHealth = <span class="hljs-keyword">new</span> List&lt;<span class="hljs-keyword">float</span>&gt;();
+List&lt;AudioClip&gt; list_m_audioClip = <span class="hljs-keyword">new</span> List&lt;AudioClip&gt;();
+</div></code></pre>
+<p>List in List in List:</p>
+<ul>
+<li>listn_something</li>
+<li>listn_type_something</li>
+</ul>
+<pre class="hljs"><code><div>List&lt;GameAsset&gt; listn_m_gameAssetDatabase = <span class="hljs-keyword">new</span> List&lt;GameAsset&gt;();
+List&lt;AudioItem&gt; listn_m_audioDatabase = <span class="hljs-keyword">new</span> List&lt;AudioItem&gt;();
+</div></code></pre>
+<h2 id="boolean">Boolean</h2>
+<ul>
+<li>is (recommended)</li>
+<li>can</li>
+<li>has (use this only when need to check an item in array, or in certain suitable context)</li>
+</ul>
+<p>When naming boolean, please keep the meaning positive to make it easier to manage this data variable</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">bool</span> isTouchYet;
+<span class="hljs-keyword">bool</span> canJump;
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">IsWeaponInHand</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">return</span> result;
+}
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">HasWeaponInArray</span>(<span class="hljs-params">WeaponItem arg_weaponItem</span>)</span>{
+  <span class="hljs-keyword">return</span> result;
+}
+</div></code></pre>
+<h2 id="int">Int</h2>
+<ul>
+<li>i8</li>
+<li>i16 (above this is special for certain use case, custom hardware)</li>
+<li>i32 (highly recommended, common use)</li>
+<li>i64 (below this is special for certain use case, custom hardware)</li>
+<li>i128</li>
+<li>i256</li>
+<li>i512</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> i32_variableName;
+<span class="hljs-keyword">int</span> i16_variableName;
+</div></code></pre>
+<h2 id="signed-int">Signed Int</h2>
+<ul>
+<li>s8</li>
+<li>s16</li>
+<li>s32 (recommended, common use)</li>
+<li>s64</li>
+<li>s128</li>
+<li>s256</li>
+<li>s512</li>
+</ul>
+<pre class="hljs"><code><div>signed <span class="hljs-keyword">int</span> s32_variableName;
+</div></code></pre>
+<h2 id="unsigned-int">Unsigned Int</h2>
+<ul>
+<li>u8</li>
+<li>u16</li>
+<li>u32 (recommended, common use)</li>
+<li>u64</li>
+<li>u128</li>
+<li>u256</li>
+<li>u512</li>
+</ul>
+<pre class="hljs"><code><div>unsigned <span class="hljs-keyword">int</span> u32_variableName;
+</div></code></pre>
+<h2 id="float">Float</h2>
+<ul>
+<li>f (recommended, common use)</li>
+<li>f32 (Rust style)</li>
+<li>f64 (Rust style)</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">float</span> f_variableName;
+</div></code></pre>
+<h2 id="double">Double</h2>
+<ul>
+<li>d (recommended, common use)</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">double</span> d_variableName;
+</div></code></pre>
+<h2 id="string">String</h2>
+<ul>
+<li>str</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">string</span> str_variableName;
+</div></code></pre>
+<h2 id="char">Char</h2>
+<ul>
+<li>char</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">char</span> char_variableName;
+</div></code></pre>
+<h2 id="vector">Vector</h2>
+<ul>
+<li>vec2</li>
+<li>vec2Int</li>
+<li>vec3</li>
+<li>vec3Int</li>
+</ul>
+<pre class="hljs"><code><div>Vector2 vec2_enemyLocation;
+Vector3 vec3_playerLocation;
+</div></code></pre>
+<h2 id="custom-class">Custom Class</h2>
+<p>All custom class that was created by user or 3rdparty all start the following letter</p>
+<ul>
+<li>m</li>
+</ul>
+<pre class="hljs"><code><div>EnemyManager m_enemyManager;
+Enemy[] sz_m_allEnemy;
+List&lt;Enemy&gt; list_m_allEnemy = <span class="hljs-keyword">new</span> List&lt;Enemy&gt;();
+</div></code></pre>
+<h1 id="function-method-naming">Function Method Naming</h1>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">SetNumber</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> arg_index = <span class="hljs-number">0</span>, <span class="hljs-keyword">int</span> arg_value</span>)</span> {
+  <span class="hljs-comment">//Content goes here</span>
+}
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">GetNumber</span>(<span class="hljs-params"></span>)</span> {
+  <span class="hljs-comment">//Content goes here</span>
+}
+</div></code></pre>
+<h1 id="interface-class-naming">Interface Class Naming</h1>
+<p>Prefix start with letter I</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title">IClassNameHere</span> {
+  <span class="hljs-comment">// Variable here</span>
+}
+</div></code></pre>
+<h1 id="abstract-class-naming">Abstract Class Naming</h1>
+<p>Prefix start with ABS</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ABSClassNameHere</span> {
+  <span class="hljs-comment">// Variable here</span>
+}
+</div></code></pre>
+<h1 id="scriptableobject-class-naming">ScriptableObject Class Naming</h1>
+<p>Prefix start with SO</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">SOClassNameHere</span> : <span class="hljs-title">ScriptableObject</span> {
+  <span class="hljs-comment">// Content goes here</span>
+}
+</div></code></pre>
+<h1 id="return">Return</h1>
+<p>Return is a signal that escape out of the function</p>
+<p>-&gt; RECOMMENDED to write return in a seperate line, with brackets</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">GetNumber</span>(<span class="hljs-params"></span>)</span> {
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</div></code></pre>
+<h1 id="considerations">Considerations</h1>
+<p>It is a maddening process to say which is X Y Z in 3D Space</p>
+<p>Please just use Roll Pitch Yaw as standard when talking to others regarding 3D Space</p>
+<p><img src="image/20231009-freyaholmer-3dcordinationchart.png" alt="Alt text">
+<img src="image/20230910-sixdegreesoffreedom.jpg" alt="Alt text"></p>
+<h1 id="bad--removed-design">Bad &amp; Removed Design</h1>
+<p>Please do not apply this, it will just make the rewriting more painful than it should be.</p>
+<p>You should spent more times writing code than reading comments</p>
+<pre class="hljs"><code><div><span class="hljs-comment">// ISSUE: what is the issue here</span>
+<span class="hljs-comment">// PROBLEM: what is the issue here</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// DO NOT: will</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// WILL NOT FIX: just use it regardless</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">// UNO: reverse what it is supposed to</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-comment">//this style is too unnatural, uncanny, hard to deduce it is positive or not (bad design syntax from Unreal Engine)</span>
+<span class="hljs-keyword">bool</span> bCanDone;
+<span class="hljs-keyword">bool</span> b_canBeDone;
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> i_something; (confuse with <span class="hljs-keyword">interface</span> <span class="hljs-title">class</span> <span class="hljs-title">which</span> <span class="hljs-title">has</span> <span class="hljs-title">same</span> <span class="hljs-title">prefix</span> <span class="hljs-title">character</span> <span class="hljs-title">i</span>, <span class="hljs-title">hungarian</span> <span class="hljs-title">style</span> <span class="hljs-title">to</span> <span class="hljs-title">avoid</span>)
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> int_something; (too redundant and why it <span class="hljs-keyword">is</span> Hungarian Notation again)
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">float</span> <span class="hljs-title">float_something</span> (<span class="hljs-params">too redundant, and Hungarian Notation</span>)
+</span></div></code></pre>
+<pre class="hljs"><code><div>szxNumber and listxNumber (by context it means, sz * number, list * number)
+- szx2
+- szx3
+- szx4
+- listx2
+- listx3
+not useful to be this specific, it lead to massive rewrite (it already happen with my own project using previous version, DO NOT) -&gt; szn and listn is enough to be used (however required user to double check if the collection contains many collections in collections - commonly found in database)
+</div></code></pre>
+<pre class="hljs"><code><div>Add underscore to function name
+int Get_FunctionName();
+
+Please just follow the standards of C++ or C#
+- C++: int getFunctionName();
+- C#: int GetFunctionName();
+</div></code></pre>
+<h2 id="common-design-pattern">Common Design Pattern</h2>
+<ul>
+<li>Composition</li>
+<li>Builder</li>
+<li>Singleton</li>
+</ul>
+<h1 id="do-not-in-any-circumstances">DO NOT IN ANY CIRCUMSTANCES</h1>
+<ul>
+<li>Bad Naming Scheme</li>
+</ul>
+<h1 id="feedback">Feedback</h1>
+<ul>
+<li>If there are something that doesn't make sense, reach out to me at contact information area.</li>
+</ul>
+<h1 id="contact-information">Contact Information</h1>
+<ul>
+<li>LinkedIn: www.linkedin.com/in/long-hoang-857578240</li>
+<li>Twitter: https://twitter.com/long_planner</li>
+<li>Email: hoanglongplanner@gmail.com</li>
+</ul>
+<h1 id="references">References</h1>
+<ul>
+<li>https://docs.godotengine.org/en/stable/tutorials/3d/introduction_to_3d.html</li>
+<li>https://mastodon.social/@acegikmo/109429307211544506</li>
+<li>https://simple.wikipedia.org/wiki/Pitch,_yaw,_and_roll</li>
+<li>https://github.com/ziglang/zig/issues/6417</li>
+<li>https://softwareengineering.stackexchange.com/questions/102689/what-is-the-benefit-of-not-using-hungarian-notation</li>
+<li>https://www.w3schools.com/cs/cs_data_types.php</li>
+</ul>
+
+</body>
+</html>
