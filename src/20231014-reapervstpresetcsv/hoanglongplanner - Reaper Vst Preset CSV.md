@@ -248,7 +248,6 @@ function msg_s(m)
   ShowConsoleMsg("\n");
 );
 
-
 //All info slider into this
 function secondary_info(Pidx)
 (
