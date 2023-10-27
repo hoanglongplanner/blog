@@ -1,15 +1,15 @@
 ---
 title: Reaper VST Preset to CSV
 author: hoanglongplanner
-date: 2023.14.10
+date: 2023.27.10
 ---
 
-# Reaper VST Preset to CSV
+# Get all VST Parameters to CSV in Reaper
 
-// Add title image here
+![Alt text](image/preview.png)
 
 # Table of Contents
-- [Reaper VST Preset to CSV](#reaper-vst-preset-to-csv)
+- [Get all VST Parameters to CSV in Reaper](#get-all-vst-parameters-to-csv-in-reaper)
 - [Table of Contents](#table-of-contents)
 - [Links](#links)
 - [References](#references)
