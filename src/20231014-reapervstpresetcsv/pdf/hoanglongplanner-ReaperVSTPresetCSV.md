@@ -9,11 +9,16 @@ header-includes:
   - \pagestyle{fancy}
   - \fancyfoot[LO,LO]{(c)2023 - hoanglongplanner}
   - \fancyfoot[CO,CE]{\thepage}
+  - \fancyfoot[RO,RO]{CC BY-SA 4.0}
 ---
 
 ![Parameters of Surge VST to CSV](../image/preview.png)
 
 \pagebreak
+
+(c)2023 - hoanglongplanner
+
+This work is licensed under CC BY-SA 4.0
 
 # Table of Contents
 - [Table of Contents](#table-of-contents)
@@ -23,11 +28,14 @@ header-includes:
 - [Introduction](#introduction)
 - [Acknowledgement - Disclaimer - Limitation](#acknowledgement---disclaimer---limitation)
 - [Code Breakdown](#code-breakdown)
+  - [Get Values from Track](#get-values-from-track)
+  - [Parameter Values](#parameter-values)
+  - [Context Values](#context-values)
+  - [Append to array](#append-to-array)
+  - [Export to](#export-to)
 
 # Links
 
-- [https://hoanglongplanner.blogspot.com/2023/10/get-all-vst-parameters-to-csv-in-reaper.html](https://hoanglongplanner.blogspot.com/2023/10/get-all-vst-parameters-to-csv-in-reaper.html)
-- [https://hoanglongplanner.wixsite.com/blog/post/get-all-vst-parameters-to-csv-in-reaper](https://hoanglongplanner.wixsite.com/blog/post/get-all-vst-parameters-to-csv-in-reaper)
 - [https://github.com/hoanglongplanner/share-blog/tree/main/doc](https://github.com/hoanglongplanner/share-blog/tree/main/doc)
 - [https://github.com/hoanglongplanner/share-blog/blob/main/doc/hoanglongplanner-ReaperVSTPresetCSV.pdf](https://github.com/hoanglongplanner/share-blog/blob/main/doc/hoanglongplanner-ReaperVSTPresetCSV.pdf)
 - [https://github.com/hoanglongplanner/share-blog/tree/main/src](https://github.com/hoanglongplanner/share-blog/tree/main/src)
@@ -85,6 +93,8 @@ To illustrate this inaccuracy I'm talking about, here are some examples
 
 # Code Breakdown
 
+## Get Values from Track
+
 The code below will initialize and set the values by using provided Reaper API functions, in this case we only want to get parameter values from the 1st track only.
 
 ```c
@@ -94,6 +104,8 @@ pval_ex = TrackFX_GetParamEx(tr, 0, Pidx, minval_ex, maxval_ex, midval_ex);
 pval_norm  = TrackFX_GetParamNormalized(tr, 0, Pidx);
 RV = TrackFX_GetParameterStepSizes(tr, 0, Pidx, step, smallstep, largestep, istoggle);
 ```
+
+## Parameter Values
 
 The code below will get parameter values (different from context value), round and automatically append these values into #pv2 array
 
@@ -105,8 +117,6 @@ The code below will get parameter values (different from context value), round a
 - contextValue
 
 Note: DISCARD meaning it won't be present in the new script, I discard these value because they are not helpful at all. (You could compare the old and new CSV version provided in Github repo).
-
-\pagebreak
 
 ```c
 // ! ORIGINAL VERSION
@@ -128,6 +138,8 @@ pval_norm
 );
 ```
 
+\pagebreak
+
 ```c
 // ! NEW VERSION
 sprintf(#pv2,
@@ -139,7 +151,7 @@ sprintf(#pv2,
 );
 ```
 
-\pagebreak
+## Context Values
 
 The code below will get context values.
 
@@ -165,13 +177,17 @@ TrackFX_GetFormattedParamValue(tr, 0, Pidx, #form_max);
 #pv2 += #form_max;
 ```
 
+\pagebreak
+
+## Append to array
+
 All value items in #pv2 array will be appended to #pvalues
 
 ```c
 #pvalues += #pv2; 
 ```
 
-\pagebreak
+## Export to
 
 The code below specify where Reaper should export those VST parameters to (CSV and TXT), please change this to suit your own need. By default, Reaper will export at the script folder.
 
