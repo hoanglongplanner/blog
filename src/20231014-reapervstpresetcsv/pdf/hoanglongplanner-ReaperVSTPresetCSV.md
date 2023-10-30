@@ -6,6 +6,7 @@ linkcolor: blue
 header-includes:
   - \usepackage[a4paper, total={6in, 8in}]{geometry}
   - \usepackage{fancyhdr}
+  - \usepackage{fancyvrb}
   - \usepackage{lastpage}
   - \pagestyle{fancy}
   - \fancyfoot[LO,LO]{(c)2023 - hoanglongplanner}
@@ -100,13 +101,14 @@ To illustrate this inaccuracy I'm talking about, here are some examples
 
 The code below will initialize and set the values by using provided Reaper API functions, in this case we only want to get parameter values from the 1st track only.
 
-```c
+\begin{Verbatim}[numbers=left, frame=single]
 RV = TrackFX_GetFormattedParamValue(tr, 0, Pidx, #form_pv);
 pval = TrackFX_GetParam(tr, 0, Pidx,  minval, maxval);
 pval_ex = TrackFX_GetParamEx(tr, 0, Pidx, minval_ex, maxval_ex, midval_ex);
 pval_norm  = TrackFX_GetParamNormalized(tr, 0, Pidx);
-RV = TrackFX_GetParameterStepSizes(tr, 0, Pidx, step, smallstep, largestep, istoggle);
-```
+RV = TrackFX_GetParameterStepSizes(tr, 0, Pidx, step, smallstep
+, largestep, istoggle);
+\end{Verbatim}
 
 ## Parameter Values
 
@@ -119,7 +121,7 @@ The code below will get parameter values (different from context value), round a
 
 Note: DISCARD meaning it won't be present in the new script, I discard these value because they are not helpful at all. (You could compare the old and new CSV files provided in Github repo).
 
-```c
+\begin{Verbatim}[numbers=left, frame=single]
 // ! ORIGINAL VERSION
 sprintf(#pv2,
 "%05.2f, %05.2f, %05.2f, %05.2f, %05.2f, %05.2f, %05.2f, 
@@ -137,11 +139,11 @@ pval,
 pval_ex,
 pval_norm
 );
-```
+\end{Verbatim}
 
 \pagebreak
 
-```c
+\begin{Verbatim}[numbers=left, frame=single]
 // ! NEW VERSION
 sprintf(#pv2,
   "%05.2f, %05.2f, %05.2f, %05.2f,\ ", 
@@ -150,7 +152,7 @@ sprintf(#pv2,
   minval,
   maxval
 );
-```
+\end{Verbatim}
 
 ## Context Values
 
@@ -158,7 +160,7 @@ The code below will get context values.
 
 These are just hacks to get highest/lowest/middle value by manipulating Reaper to set the 1st track of highest/lowest/middle possible value.
 
-```c
+\begin{Verbatim}[numbers=left, frame=single]
 //Reaper Hack to get middle value
 TrackFX_SetParam(tr, 0, Pidx, midval_ex);
 TrackFX_GetFormattedParamValue(tr, 0, Pidx, #form_def);
@@ -176,7 +178,7 @@ TrackFX_SetParam(tr, 0, Pidx, maxval_ex);
 TrackFX_GetFormattedParamValue(tr, 0, Pidx, #form_max);
 #pv2 += ", ";
 #pv2 += #form_max;
-```
+\end{Verbatim}
 
 \pagebreak
 
@@ -184,9 +186,9 @@ TrackFX_GetFormattedParamValue(tr, 0, Pidx, #form_max);
 
 All value items in #pv2 array will be appended to #pvalues
 
-```c
+\begin{Verbatim}[numbers=left, frame=single]
 #pvalues += #pv2; 
-```
+\end{Verbatim}
 
 ## Export to
 
@@ -194,10 +196,10 @@ The code below specify where Reaper should export those VST parameters to (CSV a
 
 ![CSV Filepath Location](../image/exportfilepath.png)
 
-```c
+\begin{Verbatim}[numbers=left, frame=single]
 //--FilePath--
 K_FileLocation_CSV = "/Scripts/VstPresetParameter.csv"; 
 K_FileLocation_TXT = "/Scripts/VstPresetParameter.txt";
 ParseTo(K_FileLocation_CSV);
 ParseTo(K_FileLocation_TXT);
-```
+\end{Verbatim}
