@@ -71,7 +71,7 @@ This script able to export to following formats:
 
 - CSV
 - TXT
-- From then on, you can use 3rd party libraries to convert to other formats (XML, etc...)
+- From then on, you can use 3rd party libraries to convert to other formats (JSON, XML, etc...)
 
 # Acknowledgement - Disclaimer - Limitation
 
@@ -109,14 +109,12 @@ RV = TrackFX_GetParameterStepSizes(tr, 0, Pidx, step, smallstep, largestep, isto
 
 The code below will get parameter values (different from context value), round and automatically append these values into #pv2 array
 
-- min
-- max
-- middle
+- parameterValue (current, min, max, middle)
+- contextValue (current, min, max, middle)
 - step (how much to increase and decrease knob, 0.1 0.01 0.001) (DISCARD)
 - isToggle (in theory it should only be 0 or 1) (DISCARD)
-- contextValue
 
-Note: DISCARD meaning it won't be present in the new script, I discard these value because they are not helpful at all. (You could compare the old and new CSV version provided in Github repo).
+Note: DISCARD meaning it won't be present in the new script, I discard these value because they are not helpful at all. (You could compare the old and new CSV files provided in Github repo).
 
 ```c
 // ! ORIGINAL VERSION
