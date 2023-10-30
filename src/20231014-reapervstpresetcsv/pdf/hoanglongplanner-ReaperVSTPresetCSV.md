@@ -6,9 +6,10 @@ linkcolor: blue
 header-includes:
   - \usepackage[a4paper, total={6in, 8in}]{geometry}
   - \usepackage{fancyhdr}
+  - \usepackage{lastpage}
   - \pagestyle{fancy}
   - \fancyfoot[LO,LO]{(c)2023 - hoanglongplanner}
-  - \fancyfoot[CO,CE]{\thepage}
+  - \fancyfoot[CO,CE]{Page \thepage\ of \pageref{LastPage}}
   - \fancyfoot[RO,RO]{CC BY-SA 4.0}
 ---
 
@@ -17,6 +18,8 @@ header-includes:
 \pagebreak
 
 (c)2023 - hoanglongplanner
+
+![](../image/by-sa.png)
 
 This work is licensed under CC BY-SA 4.0
 
