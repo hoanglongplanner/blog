@@ -37,6 +37,9 @@ Graphics
 Help
 Codex
 Extras
+About
+Licenses
+Credits
 Exit
 
 Gameplay
