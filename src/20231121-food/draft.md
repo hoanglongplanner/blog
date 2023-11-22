@@ -16,6 +16,7 @@
 - Rau luoc
 - Xuc xich luoc
 - Rau muong luoc
+- Bap cai luoc cham chao
 
 # Com
 - Com chien duong chau
@@ -174,19 +175,10 @@
 - Slide khoai tay
 
 
-
-
-
-
-
-
 Thit bam chien
 
-
-Bap cai luoc cham chao
-
 Goi xoai
-Xuc xich chien com
+
 Gan bo kho
 
 Thit kho
