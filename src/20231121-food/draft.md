@@ -15,6 +15,7 @@
 - Thit luoc
 - Rau luoc
 - Xuc xich luoc
+- Rau muong luoc
 
 # Com
 - Com chien duong chau
@@ -27,10 +28,10 @@
 - Khoai tay nghien
 - Khoai lang nghien
 
-# Thit
-Suon ram
-Thit bo xao dau que 
-Thit bo xao ot da lat
+# Xao
+- Suon ram
+- Thit bo xao dau que 
+- Thit bo xao ot da lat
 
 # Trung
 - Trung chien
@@ -44,6 +45,7 @@ Thit bo xao ot da lat
 - Bo roti
 - Bo ngu vi
 - Bo cari
+- Thit bo mong co
 
 # Ga
 - Ga cari
@@ -80,6 +82,8 @@ Thit bo xao ot da lat
 # Xao
 - Sup lo trang xao
 - Kho qua xao trung
+- Cai thia xao
+- Ca tim xao hanh
 
 # Chien
 - Pizza
@@ -172,10 +176,9 @@ Thit bo xao ot da lat
 
 
 
-Rau muong luoc
 
 
-Cai thia xao
+
 
 Thit bam chien
 
@@ -188,7 +191,6 @@ Gan bo kho
 
 Thit kho
 
-Ca tim xao hanh
 
 
 
