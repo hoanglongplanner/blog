@@ -1,27 +1,81 @@
 
+# Khoai
+- Cu tu
+- Khoai lang
+- Khoai tay chien
+- Khoai tay nghien
+- Khoai tay chien
+
+# Dau hu
+- Dau hu kho 
+- Dau hu rim ca chua
+- Dau hu don thit ca chua rim
+
 # Luoc
+- Thit luoc
+- Rau luoc
+- Xuc xich luoc
+
+# Com
+- Com chien duong chau
+
+# Chao
+- Chao thit bam
+- Chao ca rot
+
+# Nghien
+- Khoai tay nghien
+- Khoai lang nghien
 
 # Thit
 Suon ram
 Thit bo xao dau que 
 Thit bo xao ot da lat
 
-# Ca
-Kho ca
+# Trung
+- Trung chien
+- Trung chien hong dao
+- Trung Opla
+- Trung luoc
+- Trung luoc hong dao
 
-# Xoi
-Xoi dau phong
-Xoi khuc
-Xoi dau xanh
-Xoi man 
-Xoi ga
-Xoi gac
+# Bo
+- Bo kho
+- Bo roti
+- Bo ngu vi
+- Bo cari
+
+# Ga
+- Ga cari
+- Ga kho
+- Uc ga rim
+- Ga ram
+- Canh ga chien
+- Canh ga xao gung
+- Toi ga gam
+- Ga chip chip
+
+# Heo
+- Banh hoi heo quay
+- Thit heo xao
+
+# Vit
+- Vit luoc
+- Vit tiem
+
+# Ca
+- Kho ca
+- Ca chien gion
+- Ca kho thom
 
 # Banh
-- Banh mi hamberger
-- Banh mi dau xanh
 - Banh bao
 - Banh gio
+- Banh mi chien dau xanh 
+- Banh ran
+- Banh flan
+- Banh chuoi chien
+- Banh bong lan chuoi
 
 # Xao
 - Sup lo trang xao
@@ -30,100 +84,112 @@ Xoi gac
 # Chien
 - Pizza
 - Khoai tay chien
+- Bo vien
+- Ca vien chien
+
+# Banh Mi
+- Banh mi dau xanh
+- Banh mi hamberger
+- Banh mi thit xong khoi
+- Banh mi thit heo quay
+- Banh mi thit bam
+- Banh mi pho mai jambon
 
 # Mi
 - Spaghetti bo phomai 
 - Spaghetti sot trung ca chua
+- Mi trung
+- Mi xao bo dau que ot
+- Mi tao quan
 
 # Bun
-- Bun bo hue
-- Bun moc
 - Bun thit nuong
 - Bun thit bo xao xa ot
+- Bun moc
+- Bun bo hue
 - Bun heo luoc
+- Bun hen ca chua rau thi la
+- Bun oc
+- Bun nghieu
+- Banh canh
 
 # Pho
+- Pho ga
+- Pho bo
 
-# Banh Mi
+# Banh Uot
+- Banh uot thit bam
+
+# Xoi
+- Xoi dau phong
+- Xoi khuc
+- Xoi dau xanh
+- Xoi man 
+- Xoi ga
+- Xoi gac
+
+# Canh
+- Canh cai thao
+- Canh dua chua bo
+- Canh chua ca dieu hong
+- Canh cai thit bam
+- Canh kho qua
+- Canh khoai mo
+- Canh ca chua bap cai
+- Canh cu den ca rot khoai tay
+- Canh hen
+- Canh bi dao
+- Canh muop
 
 # Nuoc uong
 - 7up
 - Big Cola
-- Monster
 - Revive
 - Revive Chanh Muoi
+- Monster
+- Redbull
 - Suong sao den
 - Che
+- Milo
+
+# Che
+- Che dau do
+- Che xoi nuoc
+- Che hat sen
+- Che dau xanh
+- Che dau ngu
+
+# Goi
+- Goi cuon ca ngu hop
+- Goi cuon thit luoc
+- Goi sau dau ga
+- Goi du du ga
 
 # An vat
 - Bibigo Rong Bien
+- Slide khoai tay
 
-Banh canh
-Canh kho qua
-Ga ram
-Mi trung
-Thit luoc
-Rau luoc
-Canh cai thao
-Canh dua chua bo
-Canh chua ca dieu hong
-Canh cai thit bam
-Cai thia xao
-Canh bi dao
-Canh muop
-Thit bam chien
-Canh ga chien
-Canh ga xao gung
-Toi ga gam
+
+
+
 Rau muong luoc
-Khoai tay nghien
 
-Banh hoi heo quay
-Goi cuon ca ngu hop
-Goi cuon thit luoc
-Goi sau dau ga
-Goi du du ga
-Canh khoai mo
-Canh cu den ca rot khoai tay
-Banh mi chien dau xanh 
-Che dau do
-Che xoi nuoc
-Che hat sen
-Che dau xanh
-Che dau ngu
 
-Banh ran
-Ca chien gion
-Ca kho thom
-Com chien
+Cai thia xao
 
-Bo kho
-Bo roti
-Bo ngu vi
-Bo cari
-Ga cari
-Ga kho
-Uc ga rim
+Thit bam chien
+
+
+Bap cai luoc cham chao
+
 Goi xoai
 Xuc xich chien com
-Bap cai luoc cham chao
-Vit luoc
-Vit tiem
 Gan bo kho
-Mi xao bo dau que ot
-Trung chien
-Bun oc
-Canh hen
-Bun hen ca chua rau thi la
-Bun nghieu
-Dau hu kho 
-Dau hu rim ca chua
-Dau hu don thit ca chua rim
+
 Thit kho
-Banh mi thit xong khoi
-Trung  opla
+
 Ca tim xao hanh
-Banh uot thit bam
+
 
 
 
