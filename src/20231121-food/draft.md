@@ -1,4 +1,3 @@
-
 # Khoai
 - Cu tu
 - Khoai lang
@@ -20,10 +19,27 @@
 
 # Com
 - Com chien duong chau
+- Com dua bo
+- Com hai san
+- Com hen
+
+# hai san
+lau hai san
+tom luoc nuoc dua 
+tom hap bia 
+tom ram thit baroi
+tom xao hanh 
+muc nuong 
+muc xao ot 
+
 
 # Chao
 - Chao thit bam
 - Chao ca rot
+- chao ga
+- chao hai san
+- chao ca
+- chao nghieu
 
 # Nghien
 - Khoai tay nghien
@@ -41,6 +57,10 @@
 - Trung luoc
 - Trung luoc hong dao
 
+# Thit
+- Thit bam chien
+- Thit kho
+
 # Bo
 - Bo kho
 - Bo roti
@@ -57,14 +77,19 @@
 - Canh ga xao gung
 - Toi ga gam
 - Ga chip chip
+- Kho ga
 
 # Heo
 - Banh hoi heo quay
 - Thit heo xao
-
+- suon nuong
+- thit xay vien ca basa
+- heo ram 
+  
 # Vit
 - Vit luoc
 - Vit tiem
+- Vit nuong
 
 # Ca
 - Kho ca
@@ -79,12 +104,18 @@
 - Banh flan
 - Banh chuoi chien
 - Banh bong lan chuoi
-
+- banh goi
+- banh bong lan hat -dau
+- banh bong lan xoai kho
+- banh da lon
+  
 # Xao
 - Sup lo trang xao
 - Kho qua xao trung
 - Cai thia xao
 - Ca tim xao hanh
+- Muop xao
+- Xu su xao
 
 # Chien
 - Pizza
@@ -145,6 +176,8 @@
 - Canh hen
 - Canh bi dao
 - Canh muop
+canh chua rau can
+canh sup
 
 # Nuoc uong
 - 7up
@@ -175,13 +208,10 @@
 - Slide khoai tay
 
 
-Thit bam chien
 
 Goi xoai
 
 Gan bo kho
-
-Thit kho
 
 
 
