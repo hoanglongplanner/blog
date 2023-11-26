@@ -67,6 +67,7 @@ muc xao ot
 - Bo ngu vi
 - Bo cari
 - Thit bo mong co
+- Gan bo kho
 
 # Ga
 - Ga cari
@@ -116,6 +117,7 @@ muc xao ot
 - Ca tim xao hanh
 - Muop xao
 - Xu su xao
+- Mi cang
 
 # Chien
 - Pizza
@@ -153,6 +155,9 @@ muc xao ot
 - Pho ga
 - Pho bo
 
+# Mien
+Mien xao tim gan ga
+
 # Banh Uot
 - Banh uot thit bam
 
@@ -176,8 +181,8 @@ muc xao ot
 - Canh hen
 - Canh bi dao
 - Canh muop
-canh chua rau can
-canh sup
+- Canh chua rau can
+- Canh sup
 
 # Nuoc uong
 - 7up
@@ -202,6 +207,7 @@ canh sup
 - Goi cuon thit luoc
 - Goi sau dau ga
 - Goi du du ga
+- Goi xoai
 
 # An vat
 - Bibigo Rong Bien
@@ -209,9 +215,7 @@ canh sup
 
 
 
-Goi xoai
 
-Gan bo kho
 
 
 
