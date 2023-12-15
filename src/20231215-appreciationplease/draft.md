@@ -35,7 +35,7 @@ There are multiple events that divide up as gerne:
 
 # Challenge
 
-Fluency - Mastery
+Fluency (2+ hours) - Mastery (4+ hours)
 
 - Tech
 - Artistry
